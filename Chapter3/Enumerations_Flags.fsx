@@ -1,7 +1,7 @@
 ﻿open System
 
 [<Flags>]
-type DayOfWeekFlags = 
+type DayOfWeekFlags =
 | None = 0
 | Sunday = 1
 | Monday = 2
@@ -12,3 +12,9 @@ type DayOfWeekFlags =
 | Saturday = 64
 
 let weekend = DayOfWeekFlags.Saturday ||| DayOfWeekFlags.Sunday
+
+int weekend
+
+weekend.HasFlag DayOfWeekFlags.Sunday
+
+enum<DayOfWeekFlags> 65

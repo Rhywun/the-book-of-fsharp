@@ -8,5 +8,5 @@ with
 | :? FileNotFoundException as ex -> printfn "%s was not found" ex.FileName
 | :? PathTooLongException
 | :? ArgumentNullException
-| :? ArgumentException -> printfn "Invalid filename"
-| _ -> printfn "Error loading file"
+| :? ArgumentException           -> printfn "Invalid filename"
+| _                              -> printfn "Error loading file"

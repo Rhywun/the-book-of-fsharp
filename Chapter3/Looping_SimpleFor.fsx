@@ -1,5 +1,5 @@
 ﻿// Incrementing
-for i = 0 to 100 do printfn "%i" i
+for i = 0 to 10 do printfn "%i" i
 
 // Decrementing
-for i = 100 downto 0 do printfn "%A" i
+for i = 10 downto 0 do printfn "%A" i
