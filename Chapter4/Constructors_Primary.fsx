@@ -9,3 +9,4 @@ type Person (name : string, dob : DateTime) =
   member x.Age = age
 
 let p = Person("Pat", DateTime(1969, 4, 15))
+p.Age
