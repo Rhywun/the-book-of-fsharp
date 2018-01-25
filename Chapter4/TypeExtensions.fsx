@@ -2,7 +2,7 @@
   open System
   open System.Drawing
   open System.Text.RegularExpressions
-  
+
   // Regular expression to parse the ARGB components from a hex string
   let private hexPattern =
     Regex("^#(?<color>[\dA-F]{8})$", RegexOptions.IgnoreCase ||| RegexOptions.Compiled)
