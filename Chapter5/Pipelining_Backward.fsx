@@ -5,5 +5,6 @@ let marchHighTemps = [ 33.0; 30.0; 33.0; 38.0; 36.0; 31.0; 35.0;
                        42.0; 48.0; 36.0; 34.0; 38.0; 41.0; 46.0;
                        54.0; 57.0; 59.0 ]
 
-printfn "March Average (F): %f"
-<| List.average marchHighTemps
+printfn "March Average (F): %f" <| List.average marchHighTemps
+
+// It's just like $ in Haskell
