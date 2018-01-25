@@ -8,5 +8,4 @@ type ColorDistance() =
       getPointDistance c1.G c2.G
       getPointDistance c1.B c2.B ] |> List.sum |> Math.Sqrt
 
-let d = ColorDistance()
-d.GetEuclideanDistance(c2 = Color.White, c1 = Color.Snow)
+ColorDistance().GetEuclideanDistance(c2 = Color.White, c1 = Color.Snow)

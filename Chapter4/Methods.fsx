@@ -1,8 +1,8 @@
 ﻿open System
 
 type Circle(diameter : float) =
-  member x.Diameter = diameter
-  member x.GetArea() =
+  member __.Diameter = diameter
+  member __.GetArea() =
     let r = diameter / 2.0
     Math.PI * (r ** 2.0)
 
