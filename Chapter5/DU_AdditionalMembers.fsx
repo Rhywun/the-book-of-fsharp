@@ -4,12 +4,12 @@ type Markup =
 | ContentElement of string * Markup list
 | EmptyElement of string
 | Content of string
-  member x.toHtml() =
+  member x.ToHtml() =
     match x with
     | ContentElement (tag, children) ->
         use w = new System.IO.StringWriter()
         children
-          |> Seq.map (fun m -> m.toHtml())
+          |> Seq.map (fun m -> m.ToHtml())
           |> Seq.iter (fun (HtmlString(html)) -> w.Write(html))
         HtmlString (sprintf "<%s>%s</%s>" tag (w.ToString()) tag)
     | EmptyElement (tag) -> HtmlString (sprintf "<%s />" tag)
@@ -40,4 +40,4 @@ let displayHtml (HtmlString(html)) =
   System.Diagnostics.Process.Start(fn).WaitForExit()
   File.Delete fn
 
-movieList.toHtml() |> displayHtml
+movieList.ToHtml() |> displayHtml
