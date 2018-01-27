@@ -1,1 +1,1 @@
-﻿seq { 0..99 } |> Seq.map (fun i -> i * i)
+﻿seq { 0..10 } |> Seq.map (fun i -> i * i)

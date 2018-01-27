@@ -1,6 +1,6 @@
-﻿#load "__shared.fsx";;
+﻿#load "__shared.fsx"
 
-open Chapter6;;
+open Chapter6
 
-movies |> Seq.sortBy snd;;
-movies |> Seq.sortBy fst;;
+movies |> Seq.sortBy snd
+movies |> Seq.sortBy fst
