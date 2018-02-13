@@ -1,7 +1,14 @@
-﻿[<Literal>] let Zero = 0
-[<Literal>] let One = 1
-[<Literal>] let Two = 2
-[<Literal>] let Three = 3
+﻿[<Literal>]
+let Zero = 0
+
+[<Literal>]
+let One = 1
+
+[<Literal>]
+let Two = 2
+
+[<Literal>]
+let Three = 3
 
 let numberToString =
   function
