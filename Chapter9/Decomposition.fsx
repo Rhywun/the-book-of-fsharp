@@ -5,10 +5,8 @@ open Microsoft.FSharp.Quotations.ExprShape
 
 let rec showSyntax =
   function
-  | Int32 v ->
-      sprintf "%i" v
-  | Value (v, _) ->
-      sprintf "%s" (v.ToString())
+  | Int32 v                 -> sprintf "%i" v
+  | Value (v, _)            -> sprintf "%s" (v.ToString())
   | SpecificCall <@@ (+) @@> (_, _, exprs) ->
       let left = showSyntax exprs.Head
       let right = showSyntax exprs.Tail.Head
@@ -26,10 +24,8 @@ let rec showSyntax =
       else
         let sb = StringBuilder(showSyntax exprs.Head)
         exprs.Tail
-        |> List.iter (fun expr ->
-                        sb
-                          .Append(",")
-                          .Append(showSyntax expr) |> ignore)
+        |> List.iter (fun expr -> sb.Append(",")
+                                    .Append(showSyntax expr) |> ignore)
         sprintf "%s.%s (%s)" owner mi.Name (sb.ToString())
 //  Uncomment for more complex expressions
 //  | Application (left, right) ->
@@ -41,11 +37,9 @@ let rec showSyntax =
 //        sprintf "let mutable %s = %s in %s" v.Name body source
 //      else
 //        sprintf "let %s = %s in %s" v.Name body source
-  | ShapeVar var ->
-      sprintf "%A" var
-  | ShapeLambda (p, body) ->
-      sprintf "fun %s -> %s" p.Name (showSyntax body)
-  | ShapeCombination (o, exprs) ->
+  | ShapeVar var                -> sprintf "%A" var
+  | ShapeLambda (p, body)       -> sprintf "fun %s -> %s" p.Name (showSyntax body)
+  | ShapeCombination (_, exprs) ->
       let sb = StringBuilder()
       exprs |> List.iter (fun expr -> sb.Append(showSyntax expr) |> ignore)
       sb.ToString()
