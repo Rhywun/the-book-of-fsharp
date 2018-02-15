@@ -3,9 +3,11 @@
 open System
 
 type film = { id : int; name : string; releaseYear : int; gross : Nullable<float> }
-            override x.ToString() = sprintf "%s (%i)" x.name x.releaseYear
+              override x.ToString() = sprintf "%s (%i)" x.name x.releaseYear
+
 type actor = { id : int; firstName : string; lastName : string }
-              override x.ToString() = sprintf "%s, %s" x.lastName x.firstName
+               override x.ToString() = sprintf "%s, %s" x.lastName x.firstName
+
 type filmActor = { filmId : int; actorId : int }
 
 let films =

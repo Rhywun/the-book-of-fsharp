@@ -6,6 +6,7 @@ query { for f in QuerySource.films do
         where (f.releaseYear = 1984)
         select (f.ToString()) };;
 
+// Nullable operator:
 query { for f in QuerySource.films do
         where (f.gross ?<= 40000000.0)
         select (f.ToString()) };;
